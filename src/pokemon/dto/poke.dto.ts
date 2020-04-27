@@ -1,10 +1,10 @@
-import { PokemonDto } from "./interface/pokemon.dto";
+import { IPokemonDto } from "./pokemon.dto";
 
-export class PokeDto implements PokemonDto {
+export class PokeDto implements IPokemonDto {
     constructor() {
     }
     count: number;
     next: string;
     previous: null;
-    results: import("./interface/pokemon.dto").Result[];
+    results: import("./pokemon.dto").Result[];
 }

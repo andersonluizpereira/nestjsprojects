@@ -1,14 +1,15 @@
-import { Injectable, HttpService } from "@nestjs/common";
+import { HttpService, Injectable } from "@nestjs/common";
 
 @Injectable()
-export class PokemonService { 
-    constructor(private readonly httpService: HttpService
-    
-    ) {
+export class PokemonService {
+    /**
+     *
+     */
+    constructor(private readonly service: HttpService) {
 
     }
-    getBaseApiPokemon() {
-        const url = `https://pokeapi.co/api/v2/pokemon`;
-        return this.httpService.get(url);
+
+    baseApiPokemon() {
+        return this.service.get('https://pokeapi.co/api/v2/pokemon')
     }
 }
