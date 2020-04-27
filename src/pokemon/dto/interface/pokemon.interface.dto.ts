@@ -1,13 +1,13 @@
 // To parse this data:
 //
-//   import { Convert, PokemonDto } from "./file";
+//   import { Convert, PokemonInterfaceDto } from "./file";
 //
-//   const pokemonDto = Convert.toPokemonDto(json);
+//   const pokemonInterfaceDto = Convert.toPokemonInterfaceDto(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface PokemonDto {
+export interface PokemonInterfaceDto {
     count:    number;
     next:     string;
     previous: null;
@@ -22,12 +22,12 @@ export interface Result {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toPokemonDto(json: string): PokemonDto {
-        return cast(JSON.parse(json), r("PokemonDto"));
+    public static toPokemonInterfaceDto(json: string): PokemonInterfaceDto {
+        return cast(JSON.parse(json), r("PokemonInterfaceDto"));
     }
 
-    public static pokemonDtoToJson(value: PokemonDto): string {
-        return JSON.stringify(uncast(value, r("PokemonDto")), null, 2);
+    public static pokemonInterfaceDtoToJson(value: PokemonInterfaceDto): string {
+        return JSON.stringify(uncast(value, r("PokemonInterfaceDto")), null, 2);
     }
 }
 
@@ -161,7 +161,7 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "PokemonDto": o([
+    "PokemonInterfaceDto": o([
         { json: "count", js: "count", typ: 0 },
         { json: "next", js: "next", typ: "" },
         { json: "previous", js: "previous", typ: null },

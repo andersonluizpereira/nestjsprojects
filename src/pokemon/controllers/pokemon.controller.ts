@@ -2,11 +2,11 @@ import { Controller, Get, HttpException, HttpStatus } from "@nestjs/common";
 import { PokemonService } from "../service/pokemon.service";
 import { Result } from "src/shared/models/result.model";
 import { ApiResponse, ApiUseTags } from "@nestjs/swagger";
-import  { PokeDto } from "../dto/poke.dto"
+import  { PokemonDto } from "../dto/pokemon.dto"
 
 @Controller('v2/pokemons')
 @ApiUseTags('pokemon-resource')
-export class PokemonsController { 
+export class PokemonController { 
     constructor(private readonly service: PokemonService) {
  
     }
@@ -14,7 +14,7 @@ export class PokemonsController {
     @ApiResponse({
         status: 200,
         description: 'Buscas dos Pokemons.',
-        type: PokeDto
+        type: PokemonDto
       })
     async baseap() {
         try {

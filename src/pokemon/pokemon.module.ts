@@ -1,9 +1,11 @@
-import { Module, HttpModule } from '@nestjs/common';
+import { Module, HttpModule, CacheModule } from '@nestjs/common';
 import { PokemonService } from './service/pokemon.service';
-import { PokemonController } from './controllers/pokemons.controller';
+import { PokemonController } from './controllers/pokemon.controller';
 
 @Module({
-    imports: [HttpModule],
+    imports: [
+        HttpModule,
+        CacheModule.register(),],
     controllers: [PokemonController],
     providers: [PokemonService]
 })
