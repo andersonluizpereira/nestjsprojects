@@ -21,7 +21,6 @@ export class PokemonController {
         type: PokemonDto
       })
   async getBaseApiPokemon() {
-     const res = await (await this.service.baseApiPokemon().toPromise());
-     return res.data;
+     return await (await this.service.baseApiPokemon()).data;
  }
 }

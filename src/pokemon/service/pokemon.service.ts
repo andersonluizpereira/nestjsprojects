@@ -10,6 +10,6 @@ export class PokemonService {
     }
 
     baseApiPokemon() {
-        return this.service.get('https://pokeapi.co/api/v2/pokemon')
+        return this.service.get('https://pokeapi.co/api/v2/pokemon').toPromise()
     }
 }
