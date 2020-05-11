@@ -2,8 +2,8 @@
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import { PokemonModule } from '../../../src/pokemon/pokemon.module';
-import { PokemonService } from '../../../src/pokemon/service/pokemon.service';
+import { PokemonModule } from '../src/pokemon/pokemon.module';
+import { PokemonService } from '../src/pokemon/service/pokemon.service';
 import { of } from 'rxjs/internal/observable/of';
 
 describe('Pokemon e2e', () => {
